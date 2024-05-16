@@ -8,14 +8,17 @@ const db = require('./connection')
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-    res.send('Akses data nutrisi <a href="/food">di sini</a>.')
-})
-
-app.get('/food', (req, res) => {
     db.query("SELECT * FROM food", (error, result) =>{
         // Mengirimkan data sebagai JSON
         res.json(result);
     })
+})
+
+app.get('/food', (req, res) => {
+    // db.query("SELECT * FROM food", (error, result) =>{
+    //     // Mengirimkan data sebagai JSON
+    //     res.json(result);
+    // })
 })
 
 
