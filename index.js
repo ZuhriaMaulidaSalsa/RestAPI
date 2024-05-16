@@ -10,6 +10,7 @@ app.use(bodyParser.json())
 app.get('/', (req, res) => {
     db.query("SELECT * FROM food", (error, result) =>{
         // Mengirimkan data sebagai JSON
+        console.log(result)
         res.json(result);
     })
 })
