@@ -13,11 +13,6 @@ app.get('/', (req, res) => {
 
 app.get('/food', (req, res) => {
     db.query("SELECT * FROM food", (error, result) =>{
-        if (error) {
-            console.error('Error executing query:', error);
-            res.status(500).json({ error: 'Error retrieving data from database' });
-            return;
-        }
         // Mengirimkan data sebagai JSON
         res.json(result);
     })
