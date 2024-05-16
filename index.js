@@ -15,7 +15,7 @@ app.get('/food', (req, res) => {
     db.query("SELECT * FROM food", (error, result) =>{
         // hasil data dari sql
         console.log(result)
-        res.send(result)
+        res.json(result)
     })
   })
 
